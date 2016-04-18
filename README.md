@@ -42,3 +42,4 @@ The verbose option will tell you when the file is created and if it overwrites a
  3. The Big O time complexity is still Big O(n) because you have to go through each value of the first file to make sure it is not unique. Using a set data structure does make it much easier to handle unique values.
  4. The Big O space complexity is also Big O(n)
  5. The user can choose to not type out --file= and --output= if that makes it easier for them to use the program
+ 6. Some assumptions I make are that there is enough space on the computer to run the large input file and that the user has reading and writing permissions.
