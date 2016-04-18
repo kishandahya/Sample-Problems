@@ -17,8 +17,7 @@ A sample for how it may look in terminal is:
 
 	sh problem1.sh file.txt --no-prompt --verbose
 
-Problem notes: 
-1. I account for users wanting to put in only two arguments where the second is the verbose option. 
+Problem notes: 1. I account for users wanting to put in only two arguments where the second is the verbose option. 
 2. Overall, I tested 14 test cases, which I could provide if needed, and my program passed all of them. 
 3. It was fun learning about Bash shell scripting and I look forward to continue learning it in the future 
 4. For this program, the first argument is automatically the file name, so the user does not have to type "--create-file=" before typing in the file name he or she wants 
