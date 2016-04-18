@@ -57,13 +57,27 @@ url: <url>
 	word2: number
 
 This program can be used with this general structure:
-1. 	problem3.go [-help|-h]
-2. 	problem3.go -urls=<comma-separated-one-or-more-urls>
-3. 	problem3.go <comma-separated-one-or-more-urls>
+ 	problem3.go [-help|-h]
+ 	problem3.go -urls=<comma-separated-one-or-more-urls>
+ 	problem3.go <comma-separated-one-or-more-urls>
 
 sample view of what to type in terminal:
  
 	go run problem3.go -urls=https://blog.golang.org/go-maps-in-action,https://raw.githubusercontent.com/aporeto-inc/internship2016/master/samples/problem2/uniquified_file.txt
+
+Problem notes:
+1. The main data structure I used was a map with a key for every unique word and a value that is the number of times the word appears on the url.
+2. The time complexity is Big O(n)
+3. The space complexity is also Big O(n)
+4. I made use of functions more in this problems because breaking down the problem into smaller chunks made it much more manageable and easier to test 
+5. This was my first time ever programming in Go, so I basically learned it really fast, which shows that I am a very fast learner. 
+6. I enjoyed the language a lot and will continue working with it. My next goal is to process the URLs in parallel to increase speed. 
+
+
+
+Concluding remarks:
+
+Thank you for the opportunity to program for you! I had a great time looking over the problems and working through the challenges. Learning a new language in such a short amount of time was definitely challenging, but it was also rewarding because I love being challenged and working hard to achieve my goals. I look forward to speaking with you soon!
 
 
 
