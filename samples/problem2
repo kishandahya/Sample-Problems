@@ -1,5 +1,3 @@
-#Kishan Dahya
-
 import sys
 
 def instructions():
@@ -27,15 +25,18 @@ def main():
 
 # if user puts in at least an input_file and output_file
  
-    if len(sys.argv) >1:
+    if len(sys.argv) >2:
+	
 
 	#strips input_file string of prefix 
         if sys.argv[1].startswith("--file="):
             sys.argv[1] = sys.argv[1][7:]
 
+
 	#strips output_file string of prefix 
         if sys.argv[2].startswith("--output="):
             sys.argv[1] = sys.argv[1][10:]
+	
 
 	#everything is stored in a set so all duplicates are removed automatically
         with open(sys.argv[1]) as f:
@@ -48,7 +49,7 @@ def main():
         instructions()
 
 	#if user selects verbose option, he or she gets a little more information
-    if len(sys.argv) > 2:
+    if len(sys.argv) > 3:
 	if (sys.argv[3] == '-verbose'):
 		print("You have chosen the verbose option: ")
 		print("Your file input file was read and your output file was created")
