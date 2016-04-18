@@ -81,7 +81,7 @@ Problem notes:
 
 Concluding remarks:
 
-Thank you for the opportunity to program for you! I had a great time looking over the problems and working through the challenges. Learning a new language in such a short amount of time was definitely challenging, but it was also rewarding because I love being challenged and working hard to achieve my goals. I look forward to speaking with you soon!
+Thank you for the opportunity to program for you! I had a great time looking over the problems and working through them. Learning a new language in such a short amount of time was definitely challenging, but it was also rewarding because I love being challenged and working hard to achieve my goals. I look forward to speaking with you soon!
 
 
 
