@@ -11,8 +11,8 @@ options:
 
 The usage format is 
 sh test1.sh [--help|-h]
-sh test1.sh <filename> [--no-prompt] [--verbose] \n
+sh test1.sh <filename> [--no-prompt] [--verbose]
 
 A sample for how it may look in terminal is:
 
-	sh test1.sh file.txt --no-prompt --verbose\n"
+	sh test1.sh file.txt --no-prompt --verbose
