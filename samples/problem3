@@ -1,0 +1,114 @@
+//Kishan Dahya
+
+package main
+
+import(
+	"fmt"
+	"net/http"
+  "io/ioutil"
+	"os"
+	"strings"
+  "regexp"
+	"strconv"
+
+)
+
+
+func main(){
+	if len(os.Args) == 1{
+		help()
+	}
+	urls := strings.SplitAfter(os.Args[1], ",")
+	urls[0] = strings.TrimPrefix(urls[0], "-url=")
+	if os.Args[1] == "-help" || os.Args[1] == "-h" || len(os.Args)>2{
+		help()
+	} else{
+	for index, url := range urls {
+	url= strings.TrimSuffix(url, ",")
+	create_file(index, url)
+	}
+	}
+}
+
+
+func help() {
+	fmt.Println(“This program can be used with this general structure:”)
+	fmt.Println("1. 	problem3.go [-help|-h]")
+	fmt.Println("2. 	problem3.go -urls=<comma-separated-one-or-more-urls>")
+	fmt.Println("3. 	problem3.go <comma-separated-one-or-more-urls>")
+
+	fmt.Println("sample view of what to type in terminal:\n ")
+	fmt.Println( "	go run problem3.go -urls=https://blog.golang.org/go-maps-in-action,https://raw.githubusercontent.com/aporeto-inc/internship2016/master/samples/problem2/uniquified_file.txt")
+	
+	fmt.Println("\nThis program generates a work table of any url listing a keyword and how many times it appears on the page. It can take is multiple urls at the same time. A word only contains the character A-Z, a-z, or 0-9. The files will be stored as url1.txt, url2.txt and etc. They will look like this: ")
+	fmt.Println("url: <url>")
+	fmt.Println("	word1: number")
+	fmt.Println("	word2: number")
+	
+	os.Exit(1)
+}
+
+func read(url string) string {
+	response, err := http.Get(url)
+
+	//checking for error in finding
+	if err != nil {
+	fmt.Println("ERROR: Your URL is invalid")
+	help()
+	}
+	page, _ := http.Get(url)
+	words, err := ioutil.ReadAll(page.Body) 
+
+	//checking for error in reading
+	if err != nil {
+	fmt.Printf("Something went wrong when reading the URL. Please try again")
+	help()
+	}
+	response.Body.Close()
+	//return string containing all the words.
+	return string(words)
+
+	//make sure to close the url after getting it
+}
+
+//plug the return from the read function into here. This function creates the map
+func word_map(words string) map[string]int {
+	count := make(map[string]int)
+	m := regexp.MustCompile("[0-9A-Za-z]+").FindAllString(words, -1)
+	for _, key := range m {
+		_, unique := count[key]
+		if unique {
+			count[key]+=1
+		} else {
+			count[key] = 1
+		}
+	}
+	return count
+	
+}
+
+
+func create_file(index int, url string) {
+
+	file, err := os.Create("url" + strconv.Itoa(index +1) + ".txt")
+
+	if err != nil {
+		fmt.Println("Error: your file could not be created")
+		file.Close()
+		help()
+
+	}
+
+	file.WriteString("url: here " + url)
+
+	for key, value := range word_map(read(url)) {
+		file.WriteString("\n	" + key + ": " + strconv.Itoa(value))
+	}
+	
+}
+
+
+
+
+
+
