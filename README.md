@@ -15,7 +15,7 @@ sh test1.sh <filename> [--no-prompt] [--verbose]
 
 A sample for how it may look in terminal is:
 
-	sh test1.sh file.txt --no-prompt --verbose
+	sh problem1.sh file.txt --no-prompt --verbose
 
 Problem notes: I account for users wanting to put in only two arguments where the second is the verbose option. Overall, I tested 14 test cases, which I could provide if needed, and my program passed all of them. It was fun learning about Bash shell scripting. For this one, the first input is automatically the file name, so you don't have to type --create-file= before typing it. 
 
@@ -35,7 +35,7 @@ options:
     
 The verbose option will tell you when the file is created and if it overwrites another file. An example of how to call the program in terminal may look like this: 
 
-    python uniquify --file=input_file.txt --output=<output_file.txt -verbose
+    python problem2.py --file=input_file.txt --output=<output_file.txt -verbose
      
  Problem notes: 1. If the file does not exist then Python automatically throws an error at the user saying the file or directory does not exist, so I did not find it necessary to include my own check for that. 
  2. I use a set to store all the sentences that come in from the large file. That way any duplicate copy is already deleted without me having to compare it.
