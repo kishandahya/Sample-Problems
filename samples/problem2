@@ -1,0 +1,57 @@
+import sys
+
+def instructions():
+    print("This program takes in a file name and content of that file into another file. It only takes unique instances though. Thus, the output file will not have any duplicate values.")
+    print("The program can be used with this general structure")
+    print("	uniquify [--help|-h]")
+    print(" uniquify --file=<filename> --output=<output-filename> [-verbose]")
+    print("The verbose option will tell you when the file is created and if it overwrites another file. An example of how to call the program in terminal may look like this: ")
+    print(" uniquify --file=input_file.txt --output=<output_file.txt -verbose")
+
+
+
+def main():
+
+#if user input no filename or output name
+    if len(sys.argv) == 1:
+	instructions()
+	return 1
+
+# if user asks for help
+
+    if	sys.argv[1] == '-h' or sys.argv[1] == '--help_me':
+	instructions()
+	return 1
+
+# if user puts in at least an input_file and output_file
+ 
+    if len(sys.argv) >1:
+
+	#strips input_file string of prefix 
+        if sys.argv[1].startswith("--file="):
+            sys.argv[1] = sys.argv[1][7:]
+
+	#strips output_file string of prefix 
+        if sys.argv[2].startswith("--output="):
+            sys.argv[1] = sys.argv[1][10:]
+
+	#everything is stored in a set so all duplicates are removed automatically
+        with open(sys.argv[1]) as f:
+            s = set([line.rstrip('\n') for line in f])
+
+        mylist = dir()
+        with open(sys.argv[2],'w') as f:
+        	f.write('\n'.join( s ) )
+    else:
+        instructions()
+
+	#if user selects verbose option, he or she gets a little more information
+    if len(sys.argv) > 2:
+	if (sys.argv[3] == '-verbose'):
+		print("You have chosen the verbose option: ")
+		print("Your file input file was read and your output file was created")
+		print("If there was a previous copy of the output_file, it has been overwritten")
+
+main()
+
+
