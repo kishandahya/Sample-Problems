@@ -19,7 +19,7 @@ func main(){
 		help()
 	}
 	urls := strings.SplitAfter(os.Args[1], ",")
-	urls[0] = strings.TrimPrefix(urls[0], "-url=")
+	urls[0] = strings.TrimPrefix(urls[0], "-urls=")
 	if os.Args[1] == "-help" || os.Args[1] == "-h" || len(os.Args)>2{
 		help()
 	} else{
@@ -32,7 +32,7 @@ func main(){
 
 
 func help() {
-	fmt.Println(“This program can be used with this general structure:”)
+	fmt.Println("This program can be used with this general structure:")
 	fmt.Println("1. 	problem3.go [-help|-h]")
 	fmt.Println("2. 	problem3.go -urls=<comma-separated-one-or-more-urls>")
 	fmt.Println("3. 	problem3.go <comma-separated-one-or-more-urls>")
@@ -40,7 +40,7 @@ func help() {
 	fmt.Println("sample view of what to type in terminal:\n ")
 	fmt.Println( "	go run problem3.go -urls=https://blog.golang.org/go-maps-in-action,https://raw.githubusercontent.com/aporeto-inc/internship2016/master/samples/problem2/uniquified_file.txt")
 	
-	fmt.Println("\nThis program generates a work table of any url listing a keyword and how many times it appears on the page. It can take is multiple urls at the same time. A word only contains the character A-Z, a-z, or 0-9. The files will be stored as url1.txt, url2.txt and etc. They will look like this: ")
+	fmt.Println("\nThis program generates a word table of any url listing a keyword and how many times it appears on the page. It can take is multiple urls at the same time. A word only contains the character A-Z, a-z, or 0-9. The files will be stored as url1.txt, url2.txt and etc. They will look like this: ")
 	fmt.Println("url: <url>")
 	fmt.Println("	word1: number")
 	fmt.Println("	word2: number")
