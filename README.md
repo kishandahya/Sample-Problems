@@ -1,5 +1,5 @@
-# aporeto
-This repository contains three sample problems I completed for my application to be an intern at Aporeto.
+
+This repository contains three sample problems I completed.
 
 Problem 1: 
 This is a shell program that creates a file that has all 50 states listed in it. Each state is on its own line and is sorted in alphabetical order. The name of the file is the first argument the user input.
@@ -75,13 +75,7 @@ Problem notes:
 3. The space complexity is also Big O(n)
 4. I made use of functions more in this problems because breaking down the problem into smaller chunks made it much more manageable and easier to test 
 5. This was my first time ever programming in Go, so I basically learned it really fast, which shows that I am a very fast learner. 
-6. I enjoyed the language a lot and will continue working with it. My next goal is to process the URLs in parallel to increase speed. 
-
-
-
-Concluding remarks:
-
-Thank you for the opportunity to program for you! I had a great time looking over the problems and working through them. Learning a new language in such a short amount of time was definitely challenging, but it was also rewarding because I love being challenged and working hard to achieve my goals. I look forward to speaking with you soon!
+6. My next goal is to process the URLs in parallel to increase speed
 
 
 
